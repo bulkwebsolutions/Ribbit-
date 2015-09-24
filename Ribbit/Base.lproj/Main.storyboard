@@ -107,7 +107,13 @@
                             <outlet property="delegate" destination="qqQ-YC-KrH" id="4B1-Gy-5m9"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Ribbit" id="bhr-OZ-QGK"/>
+                    <navigationItem key="navigationItem" title="Ribbit" id="bhr-OZ-QGK">
+                        <barButtonItem key="rightBarButtonItem" title="Log out" id="r4O-3u-jDW">
+                            <connections>
+                                <action selector="logout:" destination="qqQ-YC-KrH" id="NO5-lR-6hz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <segue destination="tgm-O1-s8e" kind="show" identifier="showLogin" id="smF-gj-Pmx"/>
@@ -145,6 +151,9 @@
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="login:" destination="tgm-O1-s8e" eventType="touchUpInside" id="UJL-vi-rBM"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Don't have an account yet?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDN-sL-Mh6">
                                 <rect key="frame" x="29" y="236" width="207" height="21"/>
@@ -163,6 +172,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="passwordField" destination="1D4-d0-c3z" id="A52-zC-Phz"/>
+                        <outlet property="usernameField" destination="Hc2-R7-R8f" id="wSz-4d-ov4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OL7-jq-0WT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
