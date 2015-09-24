@@ -33,6 +33,7 @@
 		355AB0BE1BB48A6B0024D6C2 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 355AB0BD1BB48A6B0024D6C2 /* libsqlite3.tbd */; };
 		355AB0C11BB48DEC0024D6C2 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 355AB0C01BB48DEC0024D6C2 /* LoginViewController.m */; settings = {ASSET_TAGS = (); }; };
 		355AB0C41BB48E0B0024D6C2 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 355AB0C31BB48E0B0024D6C2 /* SignupViewController.m */; settings = {ASSET_TAGS = (); }; };
+		355AB0C71BB4BA260024D6C2 /* EditFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 355AB0C61BB4BA260024D6C2 /* EditFriendsViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,8 @@
 		355AB0C01BB48DEC0024D6C2 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		355AB0C21BB48E0B0024D6C2 /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
 		355AB0C31BB48E0B0024D6C2 /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
+		355AB0C51BB4BA260024D6C2 /* EditFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditFriendsViewController.h; sourceTree = "<group>"; };
+		355AB0C61BB4BA260024D6C2 /* EditFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditFriendsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,8 @@
 			children = (
 				355AB0841BB4705D0024D6C2 /* AppDelegate.h */,
 				355AB0851BB4705D0024D6C2 /* AppDelegate.m */,
+				355AB0C51BB4BA260024D6C2 /* EditFriendsViewController.h */,
+				355AB0C61BB4BA260024D6C2 /* EditFriendsViewController.m */,
 				355AB0A51BB480E20024D6C2 /* InboxViewController.h */,
 				355AB0BF1BB48DEC0024D6C2 /* LoginViewController.h */,
 				355AB0C01BB48DEC0024D6C2 /* LoginViewController.m */,
@@ -254,6 +259,7 @@
 				355AB0891BB4705D0024D6C2 /* ViewController.m in Sources */,
 				355AB0861BB4705D0024D6C2 /* AppDelegate.m in Sources */,
 				355AB0831BB4705D0024D6C2 /* main.m in Sources */,
+				355AB0C71BB4BA260024D6C2 /* EditFriendsViewController.m in Sources */,
 				355AB0A71BB480E20024D6C2 /* InboxViewController.m in Sources */,
 				355AB0C11BB48DEC0024D6C2 /* LoginViewController.m in Sources */,
 			);
