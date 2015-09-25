@@ -28,6 +28,8 @@
             [self.tableView reloadData];
         }
     }];
+    
+    self.currentUser = [PFUser currentUser];
 }
 
 
@@ -54,6 +56,28 @@
     
     return cell;
 }
+
+
+// Did select delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+        [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
+        UITableViewCell *newCell = [tableView cellForRowAtIndexPath:indexPath];
+        newCell.accessoryType = UITableViewCellAccessoryCheckmark;
+    
+        PFRelation *friendsRelation = [self.currentUser relationForKey:@"friendsRelation"];
+        PFUser *user = [self.allusers objectAtIndex:indexPath.row];
+        [friendsRelation addObject:user];
+        [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            
+           if (error) {
+               NSLog(@"Error %@ %@", error, [error userInfo]);
+           }
+            
+    }];
+
+}
+
 
 
 @end
