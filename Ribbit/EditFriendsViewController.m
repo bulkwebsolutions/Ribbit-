@@ -65,25 +65,65 @@
 }
 
 
+
+
+
+
+
+
 // Did select delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-        [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
-        UITableViewCell *newCell = [tableView cellForRowAtIndexPath:indexPath];
-        newCell.accessoryType = UITableViewCellAccessoryCheckmark;
     
-        PFRelation *friendsRelation = [self.currentUser relationForKey:@"friendsRelation"];
-        PFUser *user = [self.allusers objectAtIndex:indexPath.row];
-        [friendsRelation addObject:user];
+    [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
+    UITableViewCell *newCell = [tableView cellForRowAtIndexPath:indexPath];
+    
+    PFUser *user = [self.allusers objectAtIndex:indexPath.row];
+    PFRelation *friendsRelation = [self.currentUser relationForKey:@"friendsRelation"];
+    
+    if ([self isFriend:user]) {
+        // remove check mark
+        newCell.accessoryType = UITableViewCellAccessoryNone;
+        
+        // Remove from array
+        for (PFUser *friend in self.friends) {
+            if ([friend.objectId isEqualToString:user.objectId]) {
+                break;
+            }
+        }
+        
+        // Remove from backend
+        [friendsRelation removeObject:user];
         [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
             
-           if (error) {
-               NSLog(@"Error %@ %@", error, [error userInfo]);
-           }
+            if (error) {
+                NSLog(@"Error %@ %@", error, [error userInfo]);
+            }
             
+        }];
+        
+    } else {
+        // add them
+        newCell.accessoryType = UITableViewCellAccessoryCheckmark;
+        [self.friends addObject:user];
+        [friendsRelation addObject:user];
+    } // end of else
+    
+    [self.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"Error %@ %@", error, [error userInfo]);
+        }
     }];
 
-}
+
+} // end of method
+
+
+
+
+
+
+
 
 #pragma mark - Helpers
 -(BOOL)isFriend:(PFUser *)user{
