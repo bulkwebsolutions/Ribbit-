@@ -7,7 +7,6 @@
 //
 
 #import "EditFriendsViewController.h"
-#import <Parse/Parse.h>
 
 @interface EditFriendsViewController ()
 
@@ -54,6 +53,14 @@
     PFUser *user = [self.allusers objectAtIndex:indexPath.row];
     cell.textLabel.text = user.username;
     
+    if ([self isFriend:user]) {
+        // add check mark
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        // clear check mark
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
     return cell;
 }
 
@@ -78,6 +85,28 @@
 
 }
 
+#pragma mark - Helpers
+-(BOOL)isFriend:(PFUser *)user{
+    for (PFUser *friend in self.friends) {
+        if ([friend.objectId isEqualToString:user.objectId]) {
+            return YES;
+        }
+    }
+    
+    return NO;
+    
+}
 
 
 @end
+
+
+
+
+
+
+
+
+
+
+

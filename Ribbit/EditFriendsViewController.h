@@ -10,8 +10,8 @@
 #import <Parse/Parse.h>
 
 @interface EditFriendsViewController : UITableViewController
-
 @property(nonatomic, strong) NSArray *allusers;
+@property(nonatomic, strong) NSMutableArray *friends;
 @property(nonatomic, strong) PFUser *currentUser;
-
+-(BOOL)isFriend:(PFUser *)user;
 @end

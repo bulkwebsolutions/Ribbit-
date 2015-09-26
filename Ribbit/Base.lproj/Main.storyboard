@@ -50,7 +50,7 @@
                     <navigationItem key="navigationItem" title="Friends" id="nn5-WE-WPJ">
                         <barButtonItem key="rightBarButtonItem" title="edit" id="PLG-Gl-1qj">
                             <connections>
-                                <segue destination="YUq-E6-gMe" kind="show" id="o5N-PJ-EFQ"/>
+                                <segue destination="YUq-E6-gMe" kind="show" identifier="showEditFriends" id="o5N-PJ-EFQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
